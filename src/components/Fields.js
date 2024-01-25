@@ -1,4 +1,3 @@
-// DynamicFields.js
 import React, { useState} from 'react';
 import FieldRow from './FieldRow'; // Import the FieldRow component
 import List from './List';
@@ -44,7 +43,7 @@ const Fields = () => {
   const handleDataConfirmation = () => {
     setDataConfirmed(true);
     const combinedObject = collectedData.reduce((result, item, index) => {
-        result[`data_${index + 1}`] = item; // You can customize the key as needed
+        result[`data_${index + 1}`] = item;
         return result;
       }, {});
       setFinalObject(combinedObject);

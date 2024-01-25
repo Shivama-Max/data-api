@@ -1,4 +1,3 @@
-// GeneratedForm.js
 import React from 'react';
 
 const Form = ({ collectedData }) => {
