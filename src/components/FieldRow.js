@@ -84,7 +84,7 @@ const FieldRow = ({ initialFieldType, onConfirm }) => {
             </div>
             
             <div className="fieldrowelem">
-              <label>Field Data</label>
+              <label>Field Data - Space Separated</label>
               <input placeholder="Field Data" value={fieldData} onChange={e => setFieldData(e.target.value)} />
             </div>
                   
