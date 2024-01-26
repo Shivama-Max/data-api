@@ -19,7 +19,7 @@ const Fields = () => {
 
   const renderFieldOptions = () => (
     <div>
-      <select onChange={e => addField(e.target.value)}>
+      <select class = "fieldtype" onChange={e => addField(e.target.value)}>
         <option value="">Select Field Type</option>
         <option value="TextBox">Text Box</option>
         <option value="Dropdown">Dropdown</option>
@@ -55,7 +55,7 @@ const Fields = () => {
   return (
     <>
         <div>
-        {!dataConfirmed && <button onClick={() => setShowFieldOptions(true)}>Add Field</button>}
+        {!dataConfirmed && <button class = "but" onClick={() => setShowFieldOptions(true)}>Add Field</button>}
         {showFieldOptions && renderFieldOptions()}
         {fields.map(field => (
             <FieldRow key={field.id} initialFieldType={field.type} onConfirm={handleFieldConfirm} />
@@ -64,8 +64,8 @@ const Fields = () => {
         {!dataConfirmed && 
         <>
             <List data={collectedData} />
-            <button onClick={handleReset}>Reset</button>
-            <button onClick={handleDataConfirmation} disabled={collectedData.length === 0}>
+            <button className = "but danger" onClick={handleReset}>Reset</button>
+            <button className = "but custbut" onClick={handleDataConfirmation} disabled={collectedData.length === 0}>
             Confirm Data
             </button>
         </>}

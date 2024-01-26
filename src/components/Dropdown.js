@@ -1,12 +1,15 @@
 import React from "react";
+import logo from "../assets/logo.jpg"
 
 const Dropdown = ({ onSelect }) => {
     return (
-      <select onChange={e => onSelect(e.target.value)}>
-        <option value="student">Student</option>
-        <option value="selfEmployed">Self-Employed</option>
-        <option value="business">Business</option>
+      <>
+      <select class ="role-drop" onChange={e => onSelect(e.target.value)}>
+        <option class = "role" value="student">Student</option>
+        <option class = "role" value="selfEmployed">Salaried</option>
+        <option class = "role" value="business">Business</option>
       </select>
+      </>
     );
 };
 

@@ -31,53 +31,103 @@ const FieldRow = ({ initialFieldType, onConfirm }) => {
 
   return (
     <>
-    <div>
-      <select value={fieldType} onChange={e => setFieldType(e.target.value)}>
-        <option value="TextBox">Text Box</option>
-        <option value="Dropdown">Dropdown</option>
-        <option value="DatePicker">Date Picker</option>
-      </select>
-      {fieldType === 'TextBox' && (
-        <>
+      <div class = "fieldrow">
+        <div class = "fieldrowelem">
+          <label>Field Type</label>
+          <select class = "fieldtype" value={fieldType} onChange={e => setFieldType(e.target.value)}>
+            <option value="TextBox">Text Box</option>
+            <option value="Dropdown">Dropdown</option>
+            <option value="DatePicker">Date Picker</option>
+          </select>
+        </div>
+        
+        
+        {fieldType === 'TextBox' && (
+          <>
+          <div className="fieldrowelem">
+            <label>Field Display Name</label>
             <input placeholder="Mobile" value={fieldName} onChange={e => setFieldName(e.target.value)} />
-            <select value={fieldDataType} onChange={e => setFieldDataType(e.target.value)}>
-                <option value="">Select Data Type</option>
-                <option value="String">String</option>
-                <option value="Number">Number</option>
-            </select>
-            <input placeholder="Max Length" type="number" value={maxLength} onChange={e => setMaxLength(e.target.value)} />
-        </>
-      )}
-      {fieldType === 'Dropdown' && (
-        <>
-            <input placeholder="Mobile" value={fieldName} onChange={e => setFieldName(e.target.value)} />
-            <select value={fieldDataType} onChange={e => setFieldDataType(e.target.value)}>
-                <option value="">Select Data Type</option>
-                <option value="String">String</option>
-                <option value="Number">Number</option>
-            </select>  
-            <input placeholder="Field Data" value={fieldData} onChange={e => setFieldData(e.target.value)} />      
-        </>
-      )}
-      {fieldType === 'DatePicker' && (
-        <>
-            <input placeholder="DOB" value={fieldName} onChange={e => setFieldName(e.target.value)} />
-            <select value={fieldDataType} onChange={e => setFieldDataType(e.target.value)}>
-                <option value="">Select Data Type</option>
-                <option value="Date">Date</option>
-            </select>
-            <input type="date" placeholder="From" value={dateRange.from} onChange={e => setDateRange({ ...dateRange, from: e.target.value })} />
-            <input type="date" placeholder="To" value={dateRange.to} onChange={e => setDateRange({ ...dateRange, to: e.target.value })} />
-        </>
-      )}
-      <select value={mandatory} onChange={e => setMandatory(e.target.value)}>
-        <option value="no">No</option>
-        <option value="yes">Yes</option>
-      </select>
-      <button onClick={handleConfirm}>Confirm</button>
-    </div>
+          </div>
+            
+            <div className="fieldrowelem">
+              <label>Field Data Type</label>
+              <select class = "otherselect" value={fieldDataType} onChange={e => setFieldDataType(e.target.value)}>
+                  <option value="">Select Data Type</option>
+                  <option value="String">String</option>
+                  <option value="Number">Number</option>
+              </select>
+            </div>
+            
+            <div className="fieldrowelem">
+              <label>Field Max Length Allowed</label>
+              <input placeholder="Max Length" type="number" value={maxLength} onChange={e => setMaxLength(e.target.value)} />
+            </div>
+            
+          </>
+        )}
+        
+        {fieldType === 'Dropdown' && (
+          <>
+            <div className="fieldrowelem">
+              <label>Field Display Name</label>
+              <input placeholder="Mobile" value={fieldName} onChange={e => setFieldName(e.target.value)} />
+            </div>
+            <div className="fieldrowelem">
+              <label>Field Data Type</label>
+              <select class = "otherselect" value={fieldDataType} onChange={e => setFieldDataType(e.target.value)}>
+                  <option value="">Select Data Type</option>
+                  <option value="String">String</option>
+                  <option value="Number">Number</option>
+              </select>  
+            </div>
+            
+            <div className="fieldrowelem">
+              <label>Field Data</label>
+              <input placeholder="Field Data" value={fieldData} onChange={e => setFieldData(e.target.value)} />
+            </div>
+                  
+          </>
+        )}
+        
+        {fieldType === 'DatePicker' && (
+          <>
+            <div className="fieldrowelem">
+              <label>Field Display Name</label>
+              <input placeholder="DOB" value={fieldName} onChange={e => setFieldName(e.target.value)} />
+            </div>
+            <div className="fieldrowelem">
+              <label>Field Data Type</label>
+              <select value={fieldDataType} onChange={e => setFieldDataType(e.target.value)}>
+                  <option value="">Select Data Type</option>
+                  <option value="Date">Date</option>
+              </select>
+            </div>
+            
+            <div className="fieldrowelem">
+              <label>Date Range From</label>
+              <input type="date" placeholder="From" value={dateRange.from} onChange={e => setDateRange({ ...dateRange, from: e.target.value })} />
+            </div>
+
+            <div className="fieldrowelem">
+              <label>Date Range To</label>
+              <input type="date" placeholder="To" value={dateRange.to} onChange={e => setDateRange({ ...dateRange, to: e.target.value })} />
+            </div>
+
+          </>
+        )}
+        <div className="fieldrowelem">
+          <label>Mandatory</label>
+          <select class = "otherselect" value={mandatory} onChange={e => setMandatory(e.target.value)}>
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+        
+        <button class = "but" onClick={handleConfirm}>Confirm</button>
+      </div>
     </>
   );
+  
 };
 
 export default FieldRow;

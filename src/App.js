@@ -10,8 +10,12 @@ function App() {
   };
   return (
     <>
-    <Dropdown onSelect={handleSelect}/>
-    <Fields/>
+    <div className='main'>
+      <div className='main-content'>
+        <Dropdown onSelect={handleSelect}/>
+        <Fields/>
+      </div>
+    </div>
     </>
   );
 }

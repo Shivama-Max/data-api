@@ -4,7 +4,7 @@ import React from 'react';
 const List = ({ data }) => {
   return (
     <div>
-      <h2>Collected Data</h2>
+      <center><h2>Collected Data</h2></center>
       <table>
         <thead>
           <tr>

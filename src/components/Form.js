@@ -2,11 +2,11 @@ import React from 'react';
 
 const Form = ({ collectedData }) => {
   return (
-    <form>
+    <form class = "frm">
       {Object.keys(collectedData).map((key, index) => {
         const item = collectedData[key];
         return (
-          <div key={index}>
+          <div class= "frmelem" key={index}>
             {item.fieldName}:
             {item.fieldType === 'TextBox' && (
               <input
@@ -27,7 +27,7 @@ const Form = ({ collectedData }) => {
             )}
             {item.fieldType === 'Dropdown' && (
               <>
-                <select>
+                <select class = "otherselect">
                     <option value="">Select</option>
                     {item.fieldDataArr.map((option,index)=>(
                         <option key = {index} value={option}>
@@ -40,7 +40,7 @@ const Form = ({ collectedData }) => {
           </div>
         );
       })}
-      <button type="submit">Submit</button>
+      <button class = "but" type="submit">Submit</button>
     </form>
   );
 };
