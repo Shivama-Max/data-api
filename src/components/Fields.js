@@ -1,5 +1,7 @@
 import React, { useState} from 'react';
-import FieldRow from './FieldRow'; // Import the FieldRow component
+import { useDispatch, useSelector } from "react-redux";
+import { resetFields } from "../slices/fieldSlice";
+import FieldRow from './FieldRow';
 import List from './List';
 import Form from './Form';
 

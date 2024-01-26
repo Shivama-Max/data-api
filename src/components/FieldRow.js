@@ -1,5 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
+import { addField } from "../slices/fieldSlice";
+import { useDispatch } from "react-redux";
+
 
 const FieldRow = ({ initialFieldType, onConfirm }) => {
   const [fieldType, setFieldType] = useState(initialFieldType);

@@ -1,5 +1,7 @@
-
 import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { resetFields } from "../slices/fieldSlice";
+import { resetForm, updateFormData } from "../slices/formSlice";
 
 const List = ({ data }) => {
   return (
